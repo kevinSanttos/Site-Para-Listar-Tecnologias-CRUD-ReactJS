@@ -1,13 +1,24 @@
 import styled from "styled-components";
 
-export const Main = styled.main`
-    padding-top: 30px;
+export const Div = styled.div`
+
+   /* padding-top: 30px;
     background-color: black;
     width: 100%;
     min-height: 100vh;
     color: white;
     align-items: center;
-    text-align: center;
+    text-align: center; */
+    background-color: #212529;
+    width: 90%;
+    margin: auto;
+    padding: 30px 0px;
+    @media (min-width: 600px) {
+      width: 500px;
+      background-color: #212529;
+     
+    }
+
     input, select{
         border: none;
         border-radius: 3px;
@@ -16,8 +27,9 @@ export const Main = styled.main`
         width: 85%;
         height: 48px;
         padding: 0px 13px;
-        background-color: #212529;
+        background-color: #343B41;
         margin-top: 10px;
+       
        
     }
     
@@ -70,4 +82,5 @@ export const Main = styled.main`
       
 
      }
+
 `

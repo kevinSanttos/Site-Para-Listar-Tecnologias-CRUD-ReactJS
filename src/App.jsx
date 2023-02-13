@@ -26,8 +26,8 @@ function App() {
   }, [] )
 
   return (
-    <main className="App">
-      <ToastContainer autoClose={1000} draggable={false} transition={Zoom}/>
+    <main className='App'>
+      <ToastContainer autoClose={6000} draggable={false} transition={Zoom}/>
         <Routes>
           <Route path='/' element={<LoginPage setUserLogado={setUserLogado}></LoginPage>}/>
           <Route path='/Register' element={<RegisterPage></RegisterPage>}/>

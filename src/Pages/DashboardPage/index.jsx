@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router-dom"
-import { Main } from "./style"
+import { useNavigate } from 'react-router-dom'
+import { Main } from './style'
 export function DashboardPage({userLogado, setUserLogado}){
     const navigate = useNavigate()
     function sair(){
         setUserLogado({name: '', module: ''})
         localStorage.clear()
-        navigate(-1)
+        navigate('/')
     }
     return(
         <Main>
@@ -16,8 +16,8 @@ export function DashboardPage({userLogado, setUserLogado}){
                     <p>{userLogado.module}</p>
                 </div>
             </section>
-            <div className="div">
-                <h2>Que pena estamos em desenvolvimento :{"("}</h2>
+            <div className='div'>
+                <h2>Que pena estamos em desenvolvimento :{'('}</h2>
                 <p>Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>
             </div>
            

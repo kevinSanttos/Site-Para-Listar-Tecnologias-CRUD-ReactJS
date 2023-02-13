@@ -8,24 +8,30 @@ export const Main = styled.main`
     color: white;
     align-items: center;
     text-align: center;
-    input, select{
-        border: none;
+    input{
+        border: 2px solid white;
         border-radius: 3px;
         display: block;
         margin: auto;
         width: 85%;
         height: 48px;
         padding: 0px 13px;
-        background-color: #212529;
+        background-color: transparent;
         margin-top: 10px;
-       
-    }
-    
-     h2{
         
+    }
+    label{
+        margin-left: -70%;
+    }
+     h1{
+        color: #FF577F;
+        margin-top: 50px;
+     }
+     h2{
+        margin-bottom: 45px;
      }
      button{
-        background-color: #59323F;
+        background-color: #FF577F;
         color: white;
         border: none;
         border-radius: 3px;
@@ -34,30 +40,43 @@ export const Main = styled.main`
         padding: 0px 15px;
         margin-top: 20px;
         cursor: pointer;
-        margin-left: 15px;
-     }
-     select option{
-        color: gray;
      }
      p{
-        color: gray;
+        color:gray;
+        margin: 50px 0px;
      }
+     
      section{
-        background-color: transparent;
-        border: 1px solid gray;
+        background-color: #212529;
         width: 80%;
         padding: 34px 18px;
         height: 400px;
         margin: auto;
-        height: 820px;
+        height: 500px;
         border-radius: 3px;
-        max-width: 440px;
+        @media(min-width: 600px){
+            width: 450px;
+        }
+
+        .link{
+            background-color: gray;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20%;
+            border-radius: 3px;
+            
      }
-     form{
-        text-align: left;
      }
-     label{
-        margin-left: 25px;
+     @media(min-width: 600px){
+        input{
+            width: 379px;
+        }
+        button{
+            width: 379px;
+        }
+        .link{
+            padding: 15px 200px;
+        }
      }
      span{
       color: red;
@@ -66,8 +85,7 @@ export const Main = styled.main`
       
       
      }
-     .divInput_Error{
-      
-
+     .errorInput{
+        text-align: left;
      }
 `
