@@ -3,15 +3,18 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Link, useNavigate } from "react-router-dom"
 import { useForm } from 'react-hook-form'
+import { UserContext } from '../../../contexts/UserContext'
+import { useContext } from 'react'
 
-export function ConteudoLoginPage({loginUser}){
+export function ConteudoLoginPage(){
+
+    const {loginUser} = useContext(UserContext)
 
     const formSchema = yup.object().shape({
         email: yup.string().required('Digite o E-mail').email('E-mail inválido'),
         password: yup.string().required('Digite a senha')
     }).required()
     
-    const navigate = useNavigate()
     const { register, handleSubmit, formState: {errors} } = useForm( { resolver: yupResolver(formSchema),})
 
     return (

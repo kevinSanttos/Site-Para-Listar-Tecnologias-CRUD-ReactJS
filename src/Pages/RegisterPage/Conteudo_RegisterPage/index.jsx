@@ -2,7 +2,11 @@ import { Div } from "./style"
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
-export function Conteudo_RegisterPage({registerUser}){
+import { useContext } from "react"
+import { UserContext } from "../../../contexts/UserContext"
+export function Conteudo_RegisterPage(){
+
+    const {registerUser} = useContext(UserContext)
 
     const formSchema = yup.object().shape({
         name: yup.string().required('Nome obrigatório'),
@@ -24,7 +28,7 @@ export function Conteudo_RegisterPage({registerUser}){
         } = useForm({
         resolver: yupResolver(formSchema),
     }
-    )
+    ) 
    
     return(
         <Div>

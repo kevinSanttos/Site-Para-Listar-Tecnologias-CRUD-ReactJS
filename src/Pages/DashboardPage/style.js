@@ -66,9 +66,5 @@ export const Main = styled.main`
         text-align: left;
         margin: auto;
     }
-    @media(max-width: 800px){
-        .div{
-            display: none;
-        }
-    }
+   
 `
