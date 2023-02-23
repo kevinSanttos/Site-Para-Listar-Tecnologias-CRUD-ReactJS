@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react"
-import { setCommentRange } from "typescript"
 import { TecnologiasContext } from "../../../contexts/TecnologiasContext"
 import { UserContext} from "../../../contexts/UserContext"
 import { Container, Main, Card } from "./style"

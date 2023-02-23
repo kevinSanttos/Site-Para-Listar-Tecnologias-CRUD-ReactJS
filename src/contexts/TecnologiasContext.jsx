@@ -36,16 +36,16 @@ export const TecnologiasProvider = ({children}) => {
             setModalCriaTech(!modalCriaTech)
             setTechs([...techs, newdata])
             toast.success("Tecnologia criada com sucesso!")
+            setInfosModal({})
         } catch (error) {
             toast.error("Erro ao criar tecnologia!")
         }
     }
     async function editTech(data, id){
+        console.log(`Esse é o id: ${id}`)
+        console.log(`Esse é o data: ${data}`)
         const newdata = {
-                
-            "title": data.name,
             "status": data.status
-          
     }
         try {
             const token = JSON.parse(localStorage.getItem("TOKEN")) 
@@ -54,9 +54,18 @@ export const TecnologiasProvider = ({children}) => {
                     Authorization: `Bearer ${token}`
                 }
             } )
-          
+            const newTechs = techs.map(tech => {
+                if(tech.id == id){
+                    return {...tech, ...newdata}
+                }
+                else{
+                    return tech
+                }
+            })
+            setTechs(newTechs)
             setEditModal(!editModal)
             toast.success("Tecnologia editada com sucesso!")
+            setInfosModal({})
         } catch (error) {
             toast.error("Erro ao editar tecnologia!")
         }
@@ -73,6 +82,8 @@ export const TecnologiasProvider = ({children}) => {
             setTechs(newTechs)
             setEditModal(!editModal)
             toast.success("Tecnologia excluida com sucesso!")
+            setInfosModal({})
+
         } catch (error) {
             toast.error("Erro ao excluir tecnologia!")
         }

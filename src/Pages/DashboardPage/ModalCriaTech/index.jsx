@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useForm } from "react-hook-form"
 export function ModalCriaTech(){
-   const {openCloseModal, registerTech} = useContext(TecnologiasContext)
+   const {openCloseModal, registerTech, setInfosModal} = useContext(TecnologiasContext)
 
    const formSchema = yup.object().shape({
     name: yup.string().required('Nome obrigatório'),
@@ -23,11 +23,16 @@ export function ModalCriaTech(){
     resolver: yupResolver(formSchema),
 }
 ) 
+
+function close(){
+    openCloseModal()
+    setInfosModal({})
+}
    
     return(
         <Fundo>
             <Modal>
-            <header><h3>Cadastrar Tecnologia</h3> <button onClick={openCloseModal}>X</button></header>
+            <header><h3>Cadastrar Tecnologia</h3> <button onClick={close}>X</button></header>
             <form onSubmit={handleSubmit(registerTech)}>
                 <label htmlFor="name">Nome</label>
                     <input type="text" id="name" {...register('name')}/>
